@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <title>Udruga Nada</title>
+
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+  <a href="/index.html" class="back"> <i class="fa fa-home" aria-hidden="true" style="font-size: x-large; ;"></i></a> 
+  <button id="menu-open" class="menu-trigger">
+    <i class="fa-solid fa-bars"></i>
+</button>
+
+<nav id="side-menu" class="side-nav">
+    <button id="menu-close" class="menu-close-btn">
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+    
+    <div class="nav-links">
+        <h3>Izbornik</h3>
+        <a href="index.html"><i class="fa-solid fa-house"></i> Početna</a>
+        <a href="avoid.html"><i class="fa-solid fa-apple-whole"></i>Što izbjegavati?</a>
+        <a href="food.html"><i class="fa-solid fa-utensils"></i> Što jesti?</a>
+        <a href="nausea.html"><i class="fa-solid fa-droplet"></i> Mučnina i apetit</a>
+        <a href="resources.html"><i class="fa-solid fa-heart"></i> Pomoć i resursi</a>
+        <a href="taste.html"><i class="fa-solid fa-carrot"></i>Promjena okusa </a>
+    </div>
+</nav>
+
+<div id="menu-overlay" class="overlay"></div>
+
+<div class="container">
+   
+
+    <div class="card purple-hero">
+        <h1>Zašto se okus hrane mijenja?</h1>
+        <p>Kemoterapija može utjecati na okusne pupoljke i njuh, mijenjajući doživljaj hrane. To je privremeno i postoje načini kako se nositi s tim.</p>
+        <div class="info-box">
+            <p><strong>Dobra vijest:</strong> Promjene su obično privremene i poboljšat će se nakon završetka liječenja.</p>
+        </div>
+    </div>
+
+    <div class="grid" id="symptoms-grid">
+        <div class="food-item card symptom-card" data-symptom="metallic">
+            <div class="icon-large">🍋</div>
+            <h2>Metalni okus</h2>
+            <p>Hrana ima okus metala, posebno meso i voda.</p>
+        </div>
+
+        <div class="food-item card symptom-card" data-symptom="loss">
+            <div class="icon-large">🌿</div>
+            <h2>Gubitak okusa</h2>
+            <p>Sve ima bljutav okus ili uopće ne osjećate aromu.</p>
+        </div>
+
+        <div class="food-item card symptom-card" data-symptom="heightened">
+            <div class="icon-large">🥄</div>
+            <h2>Preosjetljivost</h2>
+            <p>Okusi se čine prejakima ili intenzivnima.</p>
+        </div>
+    </div>
+
+    <div id="solution-section" class="card amber-section hidden">
+        <div class="title-row">
+            <i class="fa-solid fa-lightbulb text-amber"></i>
+            <h2 id="solution-title">Rješenja</h2>
+        </div>
+        <div id="solution-list" class="solution-grid">
+            </div>
+    </div>
+
+    <div class="card blue-section">
+        <h2>Pronađi svoje rješenje</h2>
+        <p id="instruction-text">Klikni na bilo koji simptom iznad kako bi vidio personalizirane savjete.</p>
+        
+        <div class="grid">
+            <div class="sub-card">
+                <h3>Opći savjeti</h3>
+                <ul>
+                    <li>Operite zube prije jela</li>
+                    <li>Ostanite hidrirani</li>
+                    <li>Isprobajte hranu na različitim temperaturama</li>
+                </ul>
+            </div>
+            <div class="sub-card">
+                <h3>Kada tražiti pomoć</h3>
+                <ul>
+                    <li>Ako ne možete jesti ili piti</li>
+                    <li>Ako naglo gubite na težini</li>
+                    <li>Ako simptomi potraju dugo nakon terapije</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const problemsData = {
+    metallic: {
+        title: "Metalni okus",
+        solutions: [
+            "Koristite plastični pribor za jelo umjesto metalnog",
+            "Dodajte citruse (limun, limeta) u hranu i vodu",
+            "Marinirajte meso u slatkim ili kiselkastim umacima",
+            "Isperite usta prije jela",
+            "Birajte hladnu hranu koja ima manje izražen metalni okus"
+        ]
+    },
+    loss: {
+        title: "Gubitak okusa",
+        solutions: [
+            "Koristite jače začine (začinsko bilje, češnjak)",
+            "Kombinirajte različite teksture (hrskavo, kremasto)",
+            "Isprobajte hranu s jakim prirodnim okusima",
+            "Pojačajte arome kako biste potaknuli apetit",
+            "Eksperimentirajte s toplom i hladnom hranom"
+        ]
+    },
+    heightened: {
+        title: "Preosjetljivost",
+        solutions: [
+            "Birajte blagu, neutralnu hranu",
+            "Razrijedite jake okuse",
+            "Jedite hranu na sobnoj temperaturi",
+            "Izbjegavajte jako začinjena jela",
+            "Isprobajte neutralne proteine poput piletine ili tofua"
+        ]
+    }
+};
+
+const cards = document.querySelectorAll('.symptom-card');
+const solutionSection = document.getElementById('solution-section');
+const solutionTitle = document.getElementById('solution-title');
+const solutionList = document.getElementById('solution-list');
+const instructionText = document.getElementById('instruction-text');
+
+cards.forEach(card => {
+    card.addEventListener('click', () => {
+        const symptomKey = card.getAttribute('data-symptom');
+        const data = problemsData[symptomKey];
+        
+        // Provjeri je li ova kartica već aktivna prije nego što išta promijeniš
+        const isAlreadyActive = card.classList.contains('active');
+
+        // 1. Prvo makni 'active' sa svih kartica (reset)
+        cards.forEach(c => c.classList.remove('active'));
+
+        if (isAlreadyActive) {
+            // Ako je bila aktivna, sada je zatvaramo
+            solutionSection.classList.add('hidden');
+            instructionText.innerText = "Klikni na bilo koji simptom iznad kako bi vidio personalizirane savjete.";
+        } else {
+            // Ako nije bila aktivna, otvaramo je
+            card.classList.add('active');
+            
+            // Prikaži sekciju i popuni podatke
+            solutionSection.classList.remove('hidden');
+            solutionTitle.innerText = `Rješenja za: ${data.title}`;
+            instructionText.innerText = "Klikni ponovno na isti simptom da zatvoriš rješenja.";
+
+            solutionList.innerHTML = '';
+            data.solutions.forEach((sol, index) => {
+                const item = document.createElement('div');
+                item.className = 'solution-item';
+                item.style.animationDelay = `${index * 0.1}s`;
+                item.innerHTML = `
+                    <div class="number-badge">${index + 1}</div>
+                    <p>${sol}</p>
+                `;
+                solutionList.appendChild(item);
+            });
+
+            // Lagani scroll do rješenja
+            solutionSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+    });
+});
+
+
+const sideMenu = document.getElementById('side-menu');
+const menuOpenBtn = document.getElementById('menu-open');
+const menuCloseBtn = document.getElementById('menu-close');
+const menuOverlay = document.getElementById('menu-overlay');
+
+// Funkcija za otvaranje
+menuOpenBtn.addEventListener('click', () => {
+    sideMenu.classList.add('open');
+    menuOverlay.classList.add('visible');
+});
+
+// Funkcija za zatvaranje
+const closeMenu = () => {
+    sideMenu.classList.remove('open');
+    menuOverlay.classList.remove('visible');
+};
+
+menuCloseBtn.addEventListener('click', closeMenu);
+menuOverlay.addEventListener('click', closeMenu); // Zatvori klikom bilo gdje izvan menija
+</script>
+
+</body>
+</html>

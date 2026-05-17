@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Udruga Nada</title>
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="/index.html" class="back">
+    <i class="fa fa-home" style="font-size: x-large;"></i>
+</a>
+<button id="menu-open" class="menu-trigger">
+    <i class="fa-solid fa-bars"></i>
+</button>
+
+<nav id="side-menu" class="side-nav">
+    <button id="menu-close" class="menu-close-btn">
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+    
+    <div class="nav-links">
+        <h3>Izbornik</h3>
+        <a href="index.html"><i class="fa-solid fa-house"></i> Početna</a>
+        <a href="avoid.html"><i class="fa-solid fa-apple-whole"></i>Što izbjegavati?</a>
+        <a href="food.html"><i class="fa-solid fa-utensils"></i> Što jesti?</a>
+        <a href="nausea.html"><i class="fa-solid fa-droplet"></i> Mučnina i apetit</a>
+        <a href="resources.html"><i class="fa-solid fa-heart"></i> Pomoć i resursi</a>
+        <a href="taste.html"><i class="fa-solid fa-carrot"></i>Promjena okusa </a>
+    </div>
+</nav>
+
+<div id="menu-overlay" class="overlay"></div>
+
+<div class="container">
+
+    <!-- NASLOV -->
+    <div class="card">
+        <h1>Što jesti kada nemaš apetita ili ti je mučno?</h1>
+        <p>
+            Mučnina i gubitak apetita česti su tijekom kemoterapije.
+            To se događa jer kemoterapija pogađa stanice u probavnom sustavu.
+            Postoje jednostavne strategije koje mogu pomoći.
+        </p>
+
+        <img class="image" src="https://images.unsplash.com/photo-1758721217610-a5d729a319e9" alt="" style="width: auto; height: 400px; border-radius: 8px; margin-top: 15px;">
+    </div>
+
+    <!-- SAVJETI -->
+    <h2 class="title-row" style="font-size: xx-large;">✔️ Korisni savjeti</h2>
+
+    <div class="card green hover-item tip" onclick="toggleTip(0)">
+        <div class="title-row">
+            <i class="fa-solid fa-utensils icon"></i>
+            <h2>Male i česte porcije</h2>
+        </div>
+        <p>Jedi 5-6 manjih obroka dnevno umjesto tri velika obroka.</p>
+        <div class="hidden">
+            Pomaže da želudac ne bude ni prepun ni prazan. Jedi svaka 2-3 sata.
+        </div>
+    </div>
+
+    <div class="card green hover-item tip" onclick="toggleTip(1)">
+        <div class="title-row">
+            <i class="fa-solid fa-snowflake icon"></i>
+            <h2>Biraj hladnu hranu</h2>
+        </div>
+        <p>Hladna hrana ili sobne temperature ima manje mirisa i lakše ih se tolerira.</p>
+        <div class="hidden">
+            Jogurt, smoothie ili hladna tjestenina su dobar izbor.
+        </div>
+    </div>
+
+    <div class="card green hover-item tip" onclick="toggleTip(2)">
+        <div class="title-row">
+            <i class="fa-solid fa-wind icon"></i>
+            <h2>Izbjegavaj jake mirise</h2>
+        </div>
+        <p>Jaki mirisi mogu pogoršati mučninu.</p>
+        <div class="hidden">
+            Otvori prozor, koristi ventilaciju i jedi blagu hranu.
+        </div>
+    </div>
+
+    <!-- PRIMJERI OBROKA -->
+    <div class="card yellow">
+        <h2>Primjeri hrane koji mogu pomoći</h2>
+
+        <div class="grid">
+
+            <div class="card">
+                <div class="left">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <div>
+                        <strong>Bistra juha</strong>
+                        <p>Lagana i hidratantna</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="left">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <div>
+                        <strong>Jogurt</strong>
+                        <p>Nježan za želudac</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="left">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <div>
+                        <strong>Banana</strong>
+                        <p>Blaga i energija</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="left">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <div>
+                        <strong>Krekeri ili riža</strong>
+                        <p>Smiruju želudac</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- KVIZ -->
+    <div class="card purple">
+        <h2>Brzi kviz</h2>
+        <p>Što je najbolji izbor kad ti je mučno?</p>
+
+        <button class="quiz-btn" onclick="checkQuiz('a')">
+            A. Jogurt s bananom
+        </button>
+
+        <button class="quiz-btn" onclick="checkQuiz('b')">
+            B. Ljuti curry
+        </button>
+
+        <button class="quiz-btn" onclick="checkQuiz('c')">
+            C. Lagana salata
+        </button>
+
+        <p id="quiz-result"></p>
+    </div>
+
+</div>
+
+<script>
+    // EXPAND TIP
+    function toggleTip(index) {
+        const tips = document.querySelectorAll(".tip");
+
+        tips.forEach((tip, i) => {
+            const hidden = tip.querySelector(".hidden");
+
+            if (i === index) {
+                hidden.style.display =
+                    hidden.style.display === "block" ? "none" : "block";
+            } else {
+                hidden.style.display = "none";
+            }
+        });
+    }
+
+    // QUIZ
+    function checkQuiz(answer) {
+        const result = document.getElementById("quiz-result");
+
+        if (answer === "a" || answer === "c") {
+            result.innerHTML = "✓ Odlično! Blaga hrana je najbolji izbor.";
+            result.style.color = "green";
+        } else {
+            result.innerHTML = "✗ Pokušaj nešto blaže.";
+            result.style.color = "red";
+        }
+    }
+
+const sideMenu = document.getElementById('side-menu');
+const menuOpenBtn = document.getElementById('menu-open');
+const menuCloseBtn = document.getElementById('menu-close');
+const menuOverlay = document.getElementById('menu-overlay');
+
+// Funkcija za otvaranje
+menuOpenBtn.addEventListener('click', () => {
+    sideMenu.classList.add('open');
+    menuOverlay.classList.add('visible');
+});
+
+// Funkcija za zatvaranje
+const closeMenu = () => {
+    sideMenu.classList.remove('open');
+    menuOverlay.classList.remove('visible');
+};
+
+menuCloseBtn.addEventListener('click', closeMenu);
+menuOverlay.addEventListener('click', closeMenu);
+
+
+</script>
+
+<script type="module">
+import { animate, scroll } from "https://cdn.jsdelivr.net/npm/motion@11/+esm"
+
+document.querySelectorAll(".card.green").forEach((item) => {
+    scroll(
+        animate(item, { opacity: [0, 1, 1, 0] }),
+        {
+            target: item,
+            offset: ["start end", "end end", "start start", "end start"],
+        }
+    )
+})
+</script>
+    
+</body>
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Udruga Nada</title>
+
+    <!-- Font Awesome za ikone -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Tvoj style.css -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a href="/index.html" class="back"> <i class="fa fa-home" aria-hidden="true" style="font-size: x-large; ;"></i></a>
+
+<button id="menu-open" class="menu-trigger">
+    <i class="fa-solid fa-bars"></i>
+</button>
+
+<nav id="side-menu" class="side-nav">
+    <button id="menu-close" class="menu-close-btn">
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+    
+    <div class="nav-links">
+        <h3>Izbornik</h3>
+        <a href="index.html"><i class="fa-solid fa-house"></i> Početna</a>
+        <a href="avoid.html"><i class="fa-solid fa-apple-whole"></i>Što izbjegavati?</a>
+        <a href="food.html"><i class="fa-solid fa-utensils"></i> Što jesti?</a>
+        <a href="nausea.html"><i class="fa-solid fa-droplet"></i> Mučnina i apetit</a>
+        <a href="resources.html"><i class="fa-solid fa-heart"></i> Pomoć i resursi</a>
+        <a href="taste.html"><i class="fa-solid fa-carrot"></i>Promjena okusa </a>
+    </div>
+</nav>
+
+<div id="menu-overlay" class="overlay"></div>
+
+
+
+<div class="container">
+
+   
+
+
+    <!-- HERO -->
+    <div class="card blue">
+        <h1>Where to Find Help</h1>
+        <p>
+            You don't have to navigate this journey alone.
+            Here are resources and organizations ready to support you.
+        </p>
+    </div>
+
+    <!-- RESOURCE GRID -->
+    <div class="grid">
+
+        <!-- LOCAL SUPPORT -->
+        <div class="card blue">
+            <div class="title-row">
+                <div class="icon">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+                <h2>Lokalna podrška</h2>
+            </div>
+
+            <div class="hover-item card">
+                <h3>Udruga Nada Rijeka</h3>
+                <p>Lokalna organizacija posvećena podršci pacijentima oboljelim od raka i njihovim obiteljima</p>
+            </div>
+
+            <div class="hover-item card">
+                <h3>Grupe podrške</h3>
+                <p>Tjedni sastanci za pacijente i obitelji</p>
+            </div>
+
+            <div class="hover-item card">
+                <h3>Savjetovanje o prehrani</h3>
+                <p>Sastanci sa stručnjacima za prehranu</p>
+            </div>
+        </div>
+
+        <!-- ONLINE RESOURCES -->
+        <div class="card green">
+            <div class="title-row">
+                <div class="icon">
+                    <i class="fa-solid fa-book-open"></i>
+                </div>
+                <h2>Online resursi</h2>
+            </div>
+
+            <div class="hover-item card">
+                <h3>
+                    Baza podataka o prehrani
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </h3>
+                <p>Informacije o prehrani za pacijente s rakom</p>
+            </div>
+
+            <div class="hover-item card">
+                <h3>
+                    Kolekcije recepata
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </h3>
+                <p>Lagani za pripremiti, zdravi recepti</p>
+            </div>
+
+            <div class="hover-item card">
+                <h3>
+                    Vodiči za upravljanje simptomima
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </h3>
+                <p>Savjeti za učinkovito upravljanje čestim nuspojavama</p>
+            </div>
+        </div>
+
+        <!-- PROFESSIONAL HELP -->
+        <div class="card purple">
+            <div class="title-row">
+                <div class="icon">
+                    <i class="fa-solid fa-hand-holding-heart"></i>
+                </div>
+                <h2>Profesionalna pomoć</h2>
+            </div>
+
+            <div class="hover-item card">
+                <h3>Registrirani stručnjaci za prehranu</h3>
+                <p>Specijalizirani za prehranu kod raka</p>
+            </div>
+
+            <div class="hover-item card">
+                <h3>Savjetnici za mentalno zdravlje</h3>
+                <p>Podrška za emocionalno dobrobit</p>
+            </div>
+
+            <div class="hover-item card">
+                <h3>Socijalni radnici</h3>
+                <p>Pomoć sa praktičnim brigama</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- UDRUGA NADA -->
+    <div class="card red">
+
+        <h2>Udruga Nada Rijeka</h2>
+
+        <p>
+            Lokalna organizacija posvećena podršci pacijentima oboljelim od raka i njihovim obiteljima kroz edukaciju,
+            savjetovanje i društvene programe.
+        </p>
+
+        <div class="grid">
+
+            <!-- CONTACT -->
+            <div class="card">
+                <h3>Kontakt informacije</h3>
+
+                <p>
+                    <i class="fa-solid fa-phone"></i><br>
+                    +385 51 371 062
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-envelope"></i><br>
+                    info@udruga-nada.hr
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i><br>
+                    Ulica Nada 12, 51000 Rijeka
+                </p>
+            </div>
+
+            <!-- SERVICES -->
+            <div class="card">
+                <h3>Što nudimo</h3>
+
+                <ul style="text-align:left; line-height:1.8;">
+                    <li>PSIHOSOCIJALNA POMOĆ I PODRŠKA ŽENAMA OBOLJELIM OD RAKA DOJKE I NJIHOVIM OBITELJIMA</li>
+                    <li>PREDAVANJA, SEMINARI I KONFERENCIJE</li>                    
+                    <li>PODRŠKA OBITELJIMA</li>
+                    <li>DRUŠTVENI DOGAĐAJI I AKTIVNOSTI</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <button id="contact-btn" class="menu-trigger" style="position:relative; top:auto; right:auto; margin-top:20px;">
+           Kontaktirajte nas danas
+        </button>
+
+    </div>
+
+    <!-- EMERGENCY -->
+    <div class="card">
+
+        <h2>Kontakt za hitne intervencije</h2>
+
+        <p>            
+            Ako osjećate jake simptome ili imate hitne brige, odmah kontaktirajte svoj zdravstveni tim.
+        </p>
+
+        <div class="grid">
+
+            <div class="card red">
+                <h3>Hitna pomoć</h3>
+                <h1>112</h1>
+            </div>
+
+            <div class="card blue">
+                <h3>Udruga Nada</h3>
+                <h1>+385 51 371 062</h1>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+    // Hover animacija za resource kartice
+    const items = document.querySelectorAll('.hover-item');
+
+    items.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            item.style.transform = 'scale(1.03)';
+        });
+
+        item.addEventListener('mouseleave', () => {
+            item.style.transform = 'scale(1)';
+        });
+    });
+
+    // Contact button
+  const contactBtn = document.getElementById('contact-btn');
+
+contactBtn.addEventListener('click', () => {
+    window.location.href = "mailto:info@udruga-nada.hr";
+});
+
+const sideMenu = document.getElementById('side-menu');
+const menuOpenBtn = document.getElementById('menu-open');
+const menuCloseBtn = document.getElementById('menu-close');
+const menuOverlay = document.getElementById('menu-overlay');
+
+// Funkcija za otvaranje
+menuOpenBtn.addEventListener('click', () => {
+    sideMenu.classList.add('open');
+    menuOverlay.classList.add('visible');
+});
+
+// Funkcija za zatvaranje
+const closeMenu = () => {
+    sideMenu.classList.remove('open');
+    menuOverlay.classList.remove('visible');
+};
+
+menuCloseBtn.addEventListener('click', closeMenu);
+menuOverlay.addEventListener('click', closeMenu);   
+</script>
+
+</body>
+</html>

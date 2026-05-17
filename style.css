@@ -1,0 +1,425 @@
+     body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+             background: linear-gradient(
+                135deg,
+                #d1fae5,   
+                 #fce7f3    
+    );
+
+            color: #064e3b;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        .image {
+            width: 100%;
+            border-radius: 16px;
+            margin: 20px 0;
+            height: auto;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.7);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .nav-card {
+            padding: 20px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+            transition: 0.3s;
+            text-decoration: none;
+            color: inherit;
+             display: flex;
+    align-items: center;
+    gap: 15px;
+       justify-content: space-between; /* KLJUČNO */
+    
+        }
+
+        .green {
+    background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+}
+
+.yellow {
+    background: linear-gradient(135deg, #fef3c7, #fde68a);
+}
+
+.red {
+    background: linear-gradient(135deg, #fee2e2, #fecaca);
+}
+
+.purple {
+    background: linear-gradient(135deg, #ede9fe, #ddd6fe);
+}
+
+.blue {
+    background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+}
+
+.orange {
+    background: linear-gradient(135deg, #ffedd5, #fed7aa);
+}
+
+
+        .nav-card:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background: rgba(255,255,255,0.7);
+            border-radius: 12px;
+        }
+
+        .icon {
+    font-size: 24px;
+    background: rgba(255,255,255,0.7);
+    padding: 12px;
+    border-radius: 50%;
+    color: #065f46;
+}
+
+.arrow {
+    font-size: 18px;
+    opacity: 0.7;
+    transition: 0.3s;
+  
+}
+
+.nav-card:hover .arrow {
+    transform: translateX(5px);
+}
+/*  strelica ide desno a tekst i ikone lijevo */
+.left {  
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/*za index je do ovdje*/
+
+.hover-item {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hover-item:hover {
+    transform: scale(1.03);
+}
+
+.hidden {
+    display: none;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #444;
+}
+
+.quiz-btn {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: white;
+    transition: 0.3s;
+}
+
+.quiz-btn:hover {
+    background: #eee;
+}
+
+/*odmaknuta strelica od ruba i teksta*/
+.back {
+    top: 15px;
+    margin-left: 15px;
+    margin-top: 15px;
+    display: inline-block;
+    position: sticky;
+}
+
+
+.title-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: center; /* ako želiš centrirano */
+    margin-bottom: 10px;
+}
+
+
+/* 1. Osiguraj da kartica može držati tooltip unutar sebe ili iznad sebe */
+.food-item.hover-item.card {
+    position: relative;
+    cursor: pointer;
+}
+
+/* 2. Kreiranje tooltipa */
+.food-item.hover-item.card::after {
+    content: "klikni me"; /* Tekst koji želiš */
+    position: absolute;
+    bottom: 90%;      /* Pozicija iznad kartice */
+    left: 50%;
+    transform: translateX(-50%);
+    
+    /* Stilovi za izgled */
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: normal;
+    white-space: nowrap;
+    
+    /* Sakrij ga dok nije hover */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-in-out;
+    pointer-events: none; /* Da ne smeta klikanju */
+}
+
+/* 3. Prikazivanje na hover */
+.food-item.hover-item.card:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* Specifični gradijenti za sekcije */
+.purple-hero {
+    background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
+    color: #4c1d95;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.amber-section {
+    background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+    border: 1px solid #fcd34d;
+    margin-bottom: 2rem;
+    transition: all 0.5s ease;
+}
+
+.blue-section {
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+}
+
+.info-box {
+    background: rgba(255, 255, 255, 0.6);
+    padding: 1rem;
+    border-radius: 12px;
+    margin-top: 1rem;
+}
+
+/* Stilovi za simptome */
+.symptom-card {
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, ring 0.3s ease;
+}
+
+.symptom-card:hover {
+    transform: translateY(-5px);
+}
+
+.symptom-card.active {
+    outline: 4px solid #a855f7; /* Purple ring */
+}
+
+.icon-large {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* Rješenja lista */
+.solution-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 1rem;
+}
+
+.solution-item {
+    background: white;
+    padding: 1rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    animation: slideIn 0.4s ease forwards;
+}
+
+.number-badge {
+    background: #fef3c7;
+    color: #92400e;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+/* Utility */
+.hidden { display: none; }
+.text-amber { color: #d97706; }
+
+.sub-card {
+    background: white;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Stil za gumb koji otvara meni */
+.menu-trigger {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 999;
+    background: #4c1d95; /* Ljubičasta boja kao u tvom dizajnu */
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+
+.menu-trigger:hover {
+    transform: scale(1.1);
+    background: #6d28d9;
+}
+
+/* Osnovni stilovi za bočni meni */
+.side-nav {
+    position: fixed;
+    top: 0;
+    right: -400px; /* Početno sakriveno desno */
+    width: 280px;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1001;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.side-nav.open {
+    right: 0; /* Prikazuje se */
+}
+
+/* Linkovi unutar menija */
+.nav-links h3 {
+    color: #4c1d95;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #f3e8ff;
+    padding-bottom: 10px;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #374151;
+    font-size: 1.1rem;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-links a:hover {
+    background: #f3e8ff;
+    color: #6d28d9;
+    padding-left: 20px;
+}
+
+/* Gumb za zatvaranje unutar menija */
+.menu-close-btn {
+    align-self: flex-end;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #9ca3af;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+.menu-close-btn:hover {
+    color: #ef4444;
+}
+
+/* Tamna pozadina (overlay) */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.4);
+    display: none;
+    z-index: 1000;
+}
+
+.overlay.visible {
+    display: block;
+}

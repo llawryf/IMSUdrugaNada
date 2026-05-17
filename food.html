@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foods That Support Your Body</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+   /* Reset za box-sizing - sprječava širenje elemenata zbog paddinga */
+* {
+    box-sizing: border-box;
+}
+
+.grid {
+    display: grid;
+    /* Podesili smo minmax da kartice ne budu preuske na mobitelu */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 20px;
+    perspective: 1000px;
+    padding: 10px 0;
+}
+
+/* Kontejner koji drži prostor u gridu */
+.card-container {
+    width: 100%;
+    height: 180px; /* Povećali smo malo visinu za bolji izgled */
+    cursor: pointer;
+    perspective: 1000px;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.card-container.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Za Safari */
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column; /* Omogućuje slaganje ikone i teksta */
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    border-radius: 15px;
+    border: 1px solid #e0e0e0;
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.card-back {
+    background-color: #f8faff;
+    color: #333;
+    transform: rotateY(180deg);
+    text-align: center;
+    line-height: 1.5;
+}
+
+/* Stil za strong unutar kartice */
+.card-front strong {
+    font-size: 1.2rem;
+    color: #2c3e50;
+}
+</style>
+</head>
+<body>
+
+<a href="/index.html" class="back"> <i class="fa fa-home" aria-hidden="true" style="font-size: x-large; ;"></i></a>
+
+<button id="menu-open" class="menu-trigger">
+    <i class="fa-solid fa-bars"></i>
+</button>
+
+<nav id="side-menu" class="side-nav">
+    <button id="menu-close" class="menu-close-btn">
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+    
+    <div class="nav-links">
+        <h3>Izbornik</h3>
+        <a href="index.html"><i class="fa-solid fa-house"></i> Početna</a>
+        <a href="avoid.html"><i class="fa-solid fa-apple-whole"></i>Što izbjegavati?</a>
+        <a href="food.html"><i class="fa-solid fa-utensils"></i> Što jesti?</a>
+        <a href="nausea.html"><i class="fa-solid fa-droplet"></i> Mučnina i apetit</a>
+        <a href="resources.html"><i class="fa-solid fa-heart"></i> Pomoć i resursi</a>
+        <a href="taste.html"><i class="fa-solid fa-carrot"></i>Promjena okusa </a>
+    </div>
+</nav>
+
+<div id="menu-overlay" class="overlay"></div>
+
+
+<div class="container">
+
+    <!-- HERO -->
+    <div class="card">
+        <h1>Hrana koja podržava tvoje tijelo</h1>
+
+        <p>
+            Tijekom kemoterapije tijelu je potrebna dodatna podrška kroz pravilnu prehranu.
+            Ove namirnice pomažu održati snagu, podržavaju imunitet i potiču oporavak.
+        </p>
+
+        <div class="grid">
+            <img class="image"
+                src="https://images.unsplash.com/photo-1762631935060-642a9e33ddba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+                alt="Zdrava salata">
+
+            <img class="image"
+                src="https://images.unsplash.com/photo-1660139855332-84b842e2bf2e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+                alt="Jaja">
+        </div>
+    </div>
+
+    <!-- KATEGORIJE -->
+    <div class="grid">
+
+        <!-- PROTEINI -->
+        <div class="card red" >
+            <div>
+                <div class="title-row">
+                    <div class="icon">
+                        <i class="fa-solid fa-drumstick-bite"></i>
+                    </div>
+                    <h2>Proteini</h2>
+                </div>
+
+                <p>
+                    Važni za obnovu stanica i održavanje snage.
+                </p>
+
+                <div class="food-item hover-item card">
+                    <strong>Piletina i puretina</strong>
+                    <div class="hidden">
+                        Nemasan protein, lako probavljiv.
+                    </div>
+                </div>
+
+                <div class="food-item hover-item card">
+                    <strong>Jaja</strong>
+                    <div class="hidden">
+                        Potpuni protein i jednostavna priprema.
+                    </div>
+                </div>
+
+                <div class="food-item hover-item card">
+                    <strong>Riba</strong>
+                    <div class="hidden">
+                        Omega-3 masne kiseline, nježno za želudac.
+                    </div>
+                </div>
+
+                <div class="food-item hover-item card">
+                    <strong>Mahunarke</strong>
+                    <div class="hidden">
+                        Biljni proteini i vlakna.
+                    </div>
+                </div>
+
+                <div class="food-item hover-item card">
+                    <strong>Grčki jogurt</strong>
+                    <div class="hidden">
+                        Probiotici, kalcij i proteini.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ENERGIJA -->
+        <div class="card yellow">
+            <div>
+                <div class="title-row">
+                    <div class="icon">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h2>Izvori energije</h2>
+                </div>
+
+                <p>
+                    Pružaju dugotrajnu energiju tijekom dana.
+                </p>
+
+                <div class="food-item hover-item card">
+                    <strong>Kruh od cjelovitih žitarica</strong>
+                    <div class="hidden">
+                        Složeni ugljikohidrati i vitamini B skupine.
+                    </div>
+                </div>
+
+                <div class="food-item hover-item card">
+                    <strong>Zobena kaša</strong>
+                    <div class="hidden">
+                        Blaga vlakna i dugotrajna energija.
+                    </div>
+                </div>
+
+                <div class="food-item hover-item card">
+                    <strong>Batat</strong>
+                    <div class="hidden">
+                        Vitamin A i laka probava.
+                    </div>
+                </div>
+
+                <div class="food-item hover-item card">
+                    <strong>Avokado</strong>
+                    <div class="hidden">
+                        Zdrave masnoće i kremasta tekstura.
+                    </div>
+                </div>
+
+                <div class="food-item hover-item card">
+                    <strong>Orašasti plodovi i sjemenke</strong>
+                    <div class="hidden">
+                        Zdrave masnoće, proteini i minerali.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- VITAMINI -->
+        <div class="card green">
+            <div>
+                <div class="title-row">
+                    <div class="icon">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                    <h2>Vitamini i minerali</h2>
+                </div>
+
+                <p>
+                    Podržavaju imunitet i opće zdravlje.
+                </p>
+
+                <div class="food-item hover-item card">
+                    <strong>Bobičasto voće</strong>
+                    <div class="hidden">
+                        Antioksidansi i vitamin C.
+                    </div>
+                </div>
+
+                <div class="food-item hover-item card">
+                    <strong>Zeleno lisnato povrće</strong>
+                    <div class="hidden">
+                        Željezo, folna kiselina i vitamini.
+                    </div>
+                </div>
+
+                <div class="food-item hover-item card">
+                    <strong>Citrusi</strong>
+                    <div class="hidden">
+                        Vitamin C i hidratacija.
+                    </div>
+                </div>
+
+                <div class="food-item hover-item card">
+                    <strong>Mrkva</strong>
+                    <div class="hidden">
+                        Vitamin A i beta-karoten.
+                    </div>
+                </div>
+
+                <div class="food-item hover-item card">
+                    <strong>Paprike</strong>
+                    <div class="hidden">
+                        Vitamin C i raznolikost boja.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- PLAN PREHRANE -->
+    <div class="card blue">
+
+        <h2>Dnevni plan prehrane</h2>
+
+        <p>
+            Primjer kako rasporediti obroke tijekom dana.
+            Prilagodi količine svom apetitu.
+        </p>
+
+        <div class="grid">
+
+            <div class="card-container" onclick="this.classList.toggle('flipped')">
+        <div class="card-inner">
+            <div class="card-front">
+                <strong>Doručak</strong>
+            </div>
+            <div class="card-back">
+                <p>Zobena kaša s bobičastim voćem i kuhanim jajetom</p>
+            </div>
+        </div>
+    </div>
+
+            <div class="card-container" onclick="this.classList.toggle('flipped')">
+        <div class="card-inner">
+            <div class="card-front">
+                <strong>Međuobrok</strong>
+            </div>
+            <div class="card-back">
+                <p>Grčki jogurt i šaka orašastih plodova</p>
+            </div>
+        </div>
+    </div>
+
+             <div class="card-container" onclick="this.classList.toggle('flipped')">
+
+            <div class="card-inner">
+                <div class="card-front">
+                    <strong>Ručak</strong>
+                </div>
+                <div class="card-back">
+                    <p>Piletina s batatom i kuhanim povrćem</p>
+                </div>
+            </div>
+</div>
+            <div class="card-container" onclick="this.classList.toggle('flipped')">
+        <div class="card-inner">
+            <div class="card-front">
+                <strong>Popodnevni obrok</strong>
+            </div>
+            <div class="card-back">
+                <p>Smoothie od banane, špinata i avokada</p>
+            </div>
+        </div>
+    </div>
+
+            <div class="card-container" onclick="this.classList.toggle('flipped')">
+        <div class="card-inner">
+            <div class="card-front">
+                <strong>Večera</strong>
+            </div>
+            <div class="card-back">
+                <p>Pečena riba s integralnim kruhom i povrćem</p>
+            </div>
+        </div>
+    </div>
+
+          
+
+             <div class="card-container" onclick="this.classList.toggle('flipped')">
+        <div class="card-inner">
+            <div class="card-front">
+                <strong>Večernji obrok</strong>
+            </div>
+            <div class="card-back">
+                <p>Biljni čaj i mala porcija voća</p>
+            </div>
+        </div>
+    </div>
+
+        </div>
+
+        <div class="card">
+            <p>
+                <strong>Savjet:</strong>
+                Ovo je samo vodič. Slušaj svoje tijelo i jedi kada osjetiš glad.
+                Ako ne možeš pojesti cijeli obrok, pokušaj jesti manje količine češće.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+    const items = document.querySelectorAll(".hover-item");
+
+items.forEach(item => {
+    item.addEventListener("click", () => {
+
+        const hidden = item.querySelector("div");
+        
+
+        hidden.classList.toggle("hidden");
+        item.style.border = "2px solid green";
+        item.style.backgroundColor = "#d5f5dd";
+
+        if(hidden.classList.contains("hidden")) {
+            item.style.border = "none";
+            item.style.backgroundColor = "rgba(255,255,255,0.7)";
+        } else {
+            item.style.border = "2px solid green";
+        }
+
+        
+
+    });
+});
+
+const sideMenu = document.getElementById('side-menu');
+const menuOpenBtn = document.getElementById('menu-open');
+const menuCloseBtn = document.getElementById('menu-close');
+const menuOverlay = document.getElementById('menu-overlay');
+
+// Funkcija za otvaranje
+menuOpenBtn.addEventListener('click', () => {
+    sideMenu.classList.add('open');
+    menuOverlay.classList.add('visible');
+});
+
+// Funkcija za zatvaranje
+const closeMenu = () => {
+    sideMenu.classList.remove('open');
+    menuOverlay.classList.remove('visible');
+};
+
+menuCloseBtn.addEventListener('click', closeMenu);
+menuOverlay.addEventListener('click', closeMenu);
+
+</script>
+
+
+</body>
+</html>
