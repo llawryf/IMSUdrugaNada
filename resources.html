@@ -46,10 +46,10 @@
 
     <!-- HERO -->
     <div class="card blue">
-        <h1>Where to Find Help</h1>
+        <h1>Gdje pronaći pomoć</h1>
         <p>
-            You don't have to navigate this journey alone.
-            Here are resources and organizations ready to support you.
+            Ne morate preći ovaj put sami.
+            Ovdje su resursi i organizacije spremne da Vam pomognu.
         </p>
     </div>
 
@@ -221,47 +221,7 @@
 
 </div>
 
-<script>
-    // Hover animacija za resource kartice
-    const items = document.querySelectorAll('.hover-item');
-
-    items.forEach(item => {
-        item.addEventListener('mouseenter', () => {
-            item.style.transform = 'scale(1.03)';
-        });
-
-        item.addEventListener('mouseleave', () => {
-            item.style.transform = 'scale(1)';
-        });
-    });
-
-    // Contact button
-  const contactBtn = document.getElementById('contact-btn');
-
-contactBtn.addEventListener('click', () => {
-    window.location.href = "mailto:info@udruga-nada.hr";
-});
-
-const sideMenu = document.getElementById('side-menu');
-const menuOpenBtn = document.getElementById('menu-open');
-const menuCloseBtn = document.getElementById('menu-close');
-const menuOverlay = document.getElementById('menu-overlay');
-
-// Funkcija za otvaranje
-menuOpenBtn.addEventListener('click', () => {
-    sideMenu.classList.add('open');
-    menuOverlay.classList.add('visible');
-});
-
-// Funkcija za zatvaranje
-const closeMenu = () => {
-    sideMenu.classList.remove('open');
-    menuOverlay.classList.remove('visible');
-};
-
-menuCloseBtn.addEventListener('click', closeMenu);
-menuOverlay.addEventListener('click', closeMenu);   
-</script>
+<script type="module" src="script.js"></script>
 
 </body>
 </html>

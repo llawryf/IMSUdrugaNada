@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+    <script type="module" src="script.js"></script>
 </head>
 <body>
     <link rel="stylesheet" href="style.css">
@@ -193,68 +194,19 @@
     </div>
     </div>
 
-    <script>
-    // QUIZ
-    function checkAnswer(answer) {
-        const result = document.getElementById("quiz-result");
-
-        if (answer === "c") {
-            result.innerHTML = "✓ Točno! Ovo je siguran izbor.";
-            result.style.color = "green";
-        } else {
-            result.innerHTML = "✗ Nije dobro - preteško ili prezačinjeno.";
-            result.style.color = "red";
-        }
-    }
-
-    // HOVER efekt (prikaz razloga)
-    const items = document.querySelectorAll(".hover-item");
-
-    items.forEach(item => {
-        item.addEventListener("mouseenter", () => {
-            item.querySelector(".hidden").style.display = "block";
-        });
-
-        item.addEventListener("mouseleave", () => {
-            item.querySelector(".hidden").style.display = "none";
-        });
-    });
-
-
-    const sideMenu = document.getElementById('side-menu');
-const menuOpenBtn = document.getElementById('menu-open');
-const menuCloseBtn = document.getElementById('menu-close');
-const menuOverlay = document.getElementById('menu-overlay');
-
-// Funkcija za otvaranje
-menuOpenBtn.addEventListener('click', () => {
-    sideMenu.classList.add('open');
-    menuOverlay.classList.add('visible');
-});
-
-// Funkcija za zatvaranje
-const closeMenu = () => {
-    sideMenu.classList.remove('open');
-    menuOverlay.classList.remove('visible');
-};
-
-menuCloseBtn.addEventListener('click', closeMenu);
-menuOverlay.addEventListener('click', closeMenu);
-
-</script>
-
-<script type="module">
-import { animate, scroll } from "https://cdn.jsdelivr.net/npm/motion@11/+esm"
-
-document.querySelectorAll(".card").forEach((item) => {
+    <script type="module">
+        import { animate, scroll } from "https://cdn.jsdelivr.net/npm/motion@11/+esm";
+// SCROLL animacija
+document.querySelectorAll(".card").forEach((cardItem) => {
     scroll(
-        animate(item, { opacity: [0, 1, 1, 0] }),
+        animate(cardItem, { opacity: [0, 1, 1, 0] }),
         {
-            target: item,
+            target: cardItem,
             offset: ["start end", "end end", "start start", "end start"],
         }
-    )
-})
-</script>
+    );
+});
+    </script>
+ 
 </body>
 </html>

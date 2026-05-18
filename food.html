@@ -72,6 +72,7 @@
     color: #2c3e50;
 }
 </style>
+<script src="script.js" defer></script>
 </head>
 <body>
 
@@ -374,52 +375,7 @@
 
 </div>
 
-<script>
-    const items = document.querySelectorAll(".hover-item");
 
-items.forEach(item => {
-    item.addEventListener("click", () => {
-
-        const hidden = item.querySelector("div");
-        
-
-        hidden.classList.toggle("hidden");
-        item.style.border = "2px solid green";
-        item.style.backgroundColor = "#d5f5dd";
-
-        if(hidden.classList.contains("hidden")) {
-            item.style.border = "none";
-            item.style.backgroundColor = "rgba(255,255,255,0.7)";
-        } else {
-            item.style.border = "2px solid green";
-        }
-
-        
-
-    });
-});
-
-const sideMenu = document.getElementById('side-menu');
-const menuOpenBtn = document.getElementById('menu-open');
-const menuCloseBtn = document.getElementById('menu-close');
-const menuOverlay = document.getElementById('menu-overlay');
-
-// Funkcija za otvaranje
-menuOpenBtn.addEventListener('click', () => {
-    sideMenu.classList.add('open');
-    menuOverlay.classList.add('visible');
-});
-
-// Funkcija za zatvaranje
-const closeMenu = () => {
-    sideMenu.classList.remove('open');
-    menuOverlay.classList.remove('visible');
-};
-
-menuCloseBtn.addEventListener('click', closeMenu);
-menuOverlay.addEventListener('click', closeMenu);
-
-</script>
 
 
 </body>

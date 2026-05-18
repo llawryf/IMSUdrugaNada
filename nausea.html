@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <a href="/index.html" class="back">
     <i class="fa fa-home" style="font-size: x-large;"></i>
@@ -157,72 +158,7 @@
 
 </div>
 
-<script>
-    // EXPAND TIP
-    function toggleTip(index) {
-        const tips = document.querySelectorAll(".tip");
 
-        tips.forEach((tip, i) => {
-            const hidden = tip.querySelector(".hidden");
-
-            if (i === index) {
-                hidden.style.display =
-                    hidden.style.display === "block" ? "none" : "block";
-            } else {
-                hidden.style.display = "none";
-            }
-        });
-    }
-
-    // QUIZ
-    function checkQuiz(answer) {
-        const result = document.getElementById("quiz-result");
-
-        if (answer === "a" || answer === "c") {
-            result.innerHTML = "✓ Odlično! Blaga hrana je najbolji izbor.";
-            result.style.color = "green";
-        } else {
-            result.innerHTML = "✗ Pokušaj nešto blaže.";
-            result.style.color = "red";
-        }
-    }
-
-const sideMenu = document.getElementById('side-menu');
-const menuOpenBtn = document.getElementById('menu-open');
-const menuCloseBtn = document.getElementById('menu-close');
-const menuOverlay = document.getElementById('menu-overlay');
-
-// Funkcija za otvaranje
-menuOpenBtn.addEventListener('click', () => {
-    sideMenu.classList.add('open');
-    menuOverlay.classList.add('visible');
-});
-
-// Funkcija za zatvaranje
-const closeMenu = () => {
-    sideMenu.classList.remove('open');
-    menuOverlay.classList.remove('visible');
-};
-
-menuCloseBtn.addEventListener('click', closeMenu);
-menuOverlay.addEventListener('click', closeMenu);
-
-
-</script>
-
-<script type="module">
-import { animate, scroll } from "https://cdn.jsdelivr.net/npm/motion@11/+esm"
-
-document.querySelectorAll(".card.green").forEach((item) => {
-    scroll(
-        animate(item, { opacity: [0, 1, 1, 0] }),
-        {
-            target: item,
-            offset: ["start end", "end end", "start start", "end start"],
-        }
-    )
-})
-</script>
-    
+<script  type="module" src="script.js"></script>    
 </body>
 </html>
