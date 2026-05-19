@@ -375,7 +375,32 @@
 
 </div>
 
+<script>
+    //za food.html
+const items = document.querySelectorAll(".hover-item");
 
+items.forEach(item => {
+    item.addEventListener("click", () => {
+
+        const hidden = item.querySelector("div");
+        
+
+        hidden.classList.toggle("hidden");
+        item.style.border = "2px solid green";
+        item.style.backgroundColor = "#d5f5dd";
+
+        if(hidden.classList.contains("hidden")) {
+            item.style.border = "none";
+            item.style.backgroundColor = "rgba(255,255,255,0.7)";
+        } else {
+            item.style.border = "2px solid green";
+        }
+
+        
+
+    });
+});
+</script>
 
 
 </body>

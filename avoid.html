@@ -206,6 +206,44 @@ document.querySelectorAll(".card").forEach((cardItem) => {
         }
     );
 });
+
+
+
+
+// KVIZ
+window.checkAnswer = function(answer) { 
+    const result = document.getElementById("quiz-result");
+
+    if (answer === "c") {
+        result.innerHTML = "✓ Točno! Ovo je siguran izbor.";
+        result.style.color = "green";
+    } else {
+        result.innerHTML = "✗ Nije dobro - preteško ili prezačinjeno.";
+        result.style.color = "red";
+    }
+}
+
+
+
+
+// HOVER efekt
+const avoidItems = document.querySelectorAll(".hover-item");
+
+avoidItems.forEach(item => {
+
+    const hiddenElement = item.querySelector(".hidden");
+
+    if (!hiddenElement) return;
+
+    item.addEventListener("mouseenter", () => {
+        hiddenElement.style.display = "block";
+    });
+
+    item.addEventListener("mouseleave", () => {
+        hiddenElement.style.display = "none";
+    });
+});
+
     </script>
  
 </body>

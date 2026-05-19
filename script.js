@@ -1,27 +1,4 @@
-//za food.html
-const items = document.querySelectorAll(".hover-item");
 
-items.forEach(item => {
-    item.addEventListener("click", () => {
-
-        const hidden = item.querySelector("div");
-        
-
-        hidden.classList.toggle("hidden");
-        item.style.border = "2px solid green";
-        item.style.backgroundColor = "#d5f5dd";
-
-        if(hidden.classList.contains("hidden")) {
-            item.style.border = "none";
-            item.style.backgroundColor = "rgba(255,255,255,0.7)";
-        } else {
-            item.style.border = "2px solid green";
-        }
-
-        
-
-    });
-});
 
 const sideMenu = document.getElementById('side-menu');
 const menuOpenBtn = document.getElementById('menu-open');
@@ -45,43 +22,6 @@ menuOverlay.addEventListener('click', closeMenu);
 
 
 
-//za avoid.html
-
-
-// KVIZ
-function checkAnswer(answer) {
-    const result = document.getElementById("quiz-result");
-
-    if (answer === "c") {
-        result.innerHTML = "✓ Točno! Ovo je siguran izbor.";
-        result.style.color = "green";
-    } else {
-        result.innerHTML = "✗ Nije dobro - preteško ili prezačinjeno.";
-        result.style.color = "red";
-    }
-}
-
-// dostupno za onclick u HTML-u
-window.checkAnswer = checkAnswer;
-
-
-// HOVER efekt
-const avoidItems = document.querySelectorAll(".hover-item");
-
-avoidItems.forEach(item => {
-
-    const hiddenElement = item.querySelector(".hidden");
-
-    if (!hiddenElement) return;
-
-    item.addEventListener("mouseenter", () => {
-        hiddenElement.style.display = "block";
-    });
-
-    item.addEventListener("mouseleave", () => {
-        hiddenElement.style.display = "none";
-    });
-});
 
 
 
