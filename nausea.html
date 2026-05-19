@@ -61,16 +61,16 @@
         </div>
         <p>Jedi 5-6 manjih obroka dnevno umjesto tri velika obroka.</p>
         <div class="hidden">
-            Pomaže da želudac ne bude ni prepun ni prazan. Jedi svaka 2-3 sata.
+            Kada ti je teško jesti velike obroke, male i česte porcije mogu pomoći.
         </div>
     </div>
 
     <div class="card green hover-item tip" onclick="toggleTip(1)">
         <div class="title-row">
             <i class="fa-solid fa-snowflake icon"></i>
-            <h2>Biraj hladnu hranu</h2>
+            <h2>Hrana i piće sobne temperature</h2>
         </div>
-        <p>Hladna hrana ili sobne temperature ima manje mirisa i lakše ih se tolerira.</p>
+        <p>Hrana sobne temperature ima manje mirisa i lakše ih se tolerira.</p>
         <div class="hidden">
             Jogurt, smoothie ili hladna tjestenina su dobar izbor.
         </div>
@@ -83,13 +83,24 @@
         </div>
         <p>Jaki mirisi mogu pogoršati mučninu.</p>
         <div class="hidden">
-            Otvori prozor, koristi ventilaciju i jedi blagu hranu.
+            Uključujući kuhinjske mirise, miris kave, ribe, luk i češnjak.
+        </div>
+    </div>
+
+    <div class="card green hover-item tip" onclick="toggleTip(3)">
+        <div class="title-row">
+            <i class="fa-solid fa-water icon"></i>
+            <h2>Pij tekućine tijekom dana</h2>
+        </div>
+        <p>Za smirenje mučnine najbolje je piti polako.</p>
+        <div class="hidden">
+            Sa sobom uvijek imaj bocu vode.
         </div>
     </div>
 
     <!-- PRIMJERI OBROKA -->
     <div class="card yellow">
-        <h2>Primjeri hrane koji mogu pomoći</h2>
+        <h2>Primjeri hrane nježne za želudac</h2>
 
         <div class="grid">
 
@@ -107,8 +118,8 @@
                 <div class="left">
                     <i class="fa-solid fa-circle-check"></i>
                     <div>
-                        <strong>Jogurt</strong>
-                        <p>Nježan za želudac</p>
+                        <strong>Čajevi ili biljni sokovi</strong>
+                        <p>Hidratantni i nježni za želudac</p>
                     </div>
                 </div>
             </div>
@@ -117,8 +128,8 @@
                 <div class="left">
                     <i class="fa-solid fa-circle-check"></i>
                     <div>
-                        <strong>Banana</strong>
-                        <p>Blaga i energija</p>
+                        <strong>Obična pašta, piletina ili puretina(bez kože)</strong>
+                        <p>Kao glavno jelo </p>
                     </div>
                 </div>
             </div>
@@ -127,7 +138,7 @@
                 <div class="left">
                     <i class="fa-solid fa-circle-check"></i>
                     <div>
-                        <strong>Krekeri ili riža</strong>
+                        <strong>Krekeri ili bijela riža</strong>
                         <p>Smiruju želudac</p>
                     </div>
                 </div>
@@ -142,7 +153,7 @@
         <p>Što je najbolji izbor kad ti je mučno?</p>
 
         <button class="quiz-btn" onclick="checkQuiz('a')">
-            A. Jogurt s bananom
+            A. Piletina
         </button>
 
         <button class="quiz-btn" onclick="checkQuiz('b')">
@@ -150,7 +161,7 @@
         </button>
 
         <button class="quiz-btn" onclick="checkQuiz('c')">
-            C. Lagana salata
+            C. Krekeri i čaj
         </button>
 
         <p id="quiz-result"></p>
@@ -159,6 +170,37 @@
 </div>
 
 
-<script  type="module" src="script.js"></script>    
+<script >
+    
+    // EXPAND TIP
+    function toggleTip(index) {
+        const tips = document.querySelectorAll(".tip");
+
+        tips.forEach((tip, i) => {
+            const hidden = tip.querySelector(".hidden");
+
+            if (i === index) {
+                hidden.style.display =
+                    hidden.style.display === "block" ? "none" : "block";
+            } else {
+                hidden.style.display = "none";
+            }
+        });
+    }
+
+    // QUIZ
+    function checkQuiz(answer) {
+        const result = document.getElementById("quiz-result");
+
+        if (answer === "a" || answer === "c") {
+            result.innerHTML = "✓ Odlično! Blaga hrana je najbolji izbor.";
+            result.style.color = "green";
+        } else {
+            result.innerHTML = "✗ Pokušaj nešto blaže.";
+            result.style.color = "red";
+        }
+    }
+
+</script>    
 </body>
 </html>

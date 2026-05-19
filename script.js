@@ -87,39 +87,8 @@ avoidItems.forEach(item => {
 
 
 
-// za nausea.html
-    // EXPAND TIP
-    function toggleTip(index) {
-        const tips = document.querySelectorAll(".tip");
-
-        tips.forEach((tip, i) => {
-            const hidden = tip.querySelector(".hidden");
-
-            if (i === index) {
-                hidden.style.display =
-                    hidden.style.display === "block" ? "none" : "block";
-            } else {
-                hidden.style.display = "none";
-            }
-        });
-    }
-
-    // QUIZ
-    function checkQuiz(answer) {
-        const result = document.getElementById("quiz-result");
-
-        if (answer === "a" || answer === "c") {
-            result.innerHTML = "✓ Odlično! Blaga hrana je najbolji izbor.";
-            result.style.color = "green";
-        } else {
-            result.innerHTML = "✗ Pokušaj nešto blaže.";
-            result.style.color = "red";
-        }
-    }
 
 
-window.toggleTip = toggleTip;
-window.checkQuiz = checkQuiz;
 
 
 
