@@ -10,6 +10,57 @@
 
     <!-- Tvoj style.css -->
     <link rel="stylesheet" href="style.css">
+
+<style>
+    .card-container {
+    perspective: 1000px;
+    height: 240px;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.7s;
+    transform-style: preserve-3d;
+}
+
+.card-container.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    padding: 20px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    backface-visibility: hidden;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.card-back {
+    background: white;
+    transform: rotateY(180deg);
+    color: #374151;
+    text-align: center;
+}
+
+.card-front p {
+    margin-top: 10px;
+}
+</style>
+    
 </head>
 <body>
 
@@ -53,171 +104,223 @@
         </p>
     </div>
 
-    <!-- RESOURCE GRID -->
-    <div class="grid">
+    <!-- PROGRAMI I PODRŠKA -->
+<div class="grid">
 
-        <!-- LOCAL SUPPORT -->
-        <div class="card blue">
-            <div class="title-row">
-                <div class="icon">
-                    <i class="fa-solid fa-users"></i>
-                </div>
-                <h2>Lokalna podrška</h2>
+    <div class="card purple">
+        <div class="title-row">
+            <div class="icon">
+                <i class="fa-solid fa-heart"></i>
             </div>
-
-            <div class="hover-item card">
-                <h3>Udruga Nada Rijeka</h3>
-                <p>Lokalna organizacija posvećena podršci pacijentima oboljelim od raka i njihovim obiteljima</p>
-            </div>
-
-            <div class="hover-item card">
-                <h3>Grupe podrške</h3>
-                <p>Tjedni sastanci za pacijente i obitelji</p>
-            </div>
-
-            <div class="hover-item card">
-                <h3>Savjetovanje o prehrani</h3>
-                <p>Sastanci sa stručnjacima za prehranu</p>
-            </div>
+            <h2>Psihološka podrška</h2>
         </div>
-
-        <!-- ONLINE RESOURCES -->
-        <div class="card green">
-            <div class="title-row">
-                <div class="icon">
-                    <i class="fa-solid fa-book-open"></i>
-                </div>
-                <h2>Online resursi</h2>
-            </div>
-
-            <div class="hover-item card">
-                <h3>
-                    Baza podataka o prehrani
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                </h3>
-                <p>Informacije o prehrani za pacijente s rakom</p>
-            </div>
-
-            <div class="hover-item card">
-                <h3>
-                    Kolekcije recepata
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                </h3>
-                <p>Lagani za pripremiti, zdravi recepti</p>
-            </div>
-
-            <div class="hover-item card">
-                <h3>
-                    Vodiči za upravljanje simptomima
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                </h3>
-                <p>Savjeti za učinkovito upravljanje čestim nuspojavama</p>
-            </div>
-        </div>
-
-        <!-- PROFESSIONAL HELP -->
-        <div class="card purple">
-            <div class="title-row">
-                <div class="icon">
-                    <i class="fa-solid fa-hand-holding-heart"></i>
-                </div>
-                <h2>Profesionalna pomoć</h2>
-            </div>
-
-            <div class="hover-item card">
-                <h3>Registrirani stručnjaci za prehranu</h3>
-                <p>Specijalizirani za prehranu kod raka</p>
-            </div>
-
-            <div class="hover-item card">
-                <h3>Savjetnici za mentalno zdravlje</h3>
-                <p>Podrška za emocionalno dobrobit</p>
-            </div>
-
-            <div class="hover-item card">
-                <h3>Socijalni radnici</h3>
-                <p>Pomoć sa praktičnim brigama</p>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- UDRUGA NADA -->
-    <div class="card red">
-
-        <h2>Udruga Nada Rijeka</h2>
 
         <p>
-            Lokalna organizacija posvećena podršci pacijentima oboljelim od raka i njihovim obiteljima kroz edukaciju,
-            savjetovanje i društvene programe.
+            Individualni razgovori i grupni susreti gdje žene dijele iskustva,
+            strahove i uspjehe na putu oporavka.
         </p>
+    </div>
 
-        <div class="grid">
-
-            <!-- CONTACT -->
-            <div class="card">
-                <h3>Kontakt informacije</h3>
-
-                <p>
-                    <i class="fa-solid fa-phone"></i><br>
-                    +385 51 371 062
-                </p>
-
-                <p>
-                    <i class="fa-solid fa-envelope"></i><br>
-                    info@udruga-nada.hr
-                </p>
-
-                <p>
-                    <i class="fa-solid fa-location-dot"></i><br>
-                    Ulica Nada 12, 51000 Rijeka
-                </p>
+    <div class="card green">
+        <div class="title-row">
+            <div class="icon">
+                <i class="fa-solid fa-person-walking"></i>
             </div>
+            <h2>Vježbam s Nadom</h2>
+        </div>
 
-            <!-- SERVICES -->
-            <div class="card">
-                <h3>Što nudimo</h3>
+        <p>
+            Postoperativne vježbe i fizioterapija za sprečavanje limfedema
+            i vraćanje pokretljivosti.
+        </p>
+    </div>
 
-                <ul style="text-align:left; line-height:1.8;">
-                    <li>PSIHOSOCIJALNA POMOĆ I PODRŠKA ŽENAMA OBOLJELIM OD RAKA DOJKE I NJIHOVIM OBITELJIMA</li>
-                    <li>PREDAVANJA, SEMINARI I KONFERENCIJE</li>                    
-                    <li>PODRŠKA OBITELJIMA</li>
-                    <li>DRUŠTVENI DOGAĐAJI I AKTIVNOSTI</li>
-                </ul>
+    <div class="card blue">
+        <div class="title-row">
+            <div class="icon">
+                <i class="fa-solid fa-users"></i>
+            </div>
+            <h2>Ruke nade</h2>
+        </div>
+
+        <p>
+            Program međusobne podrške koji povezuje novooboljele žene
+            sa ženama koje su već prošle liječenje.
+        </p>
+    </div>
+
+    <div class="card orange">
+        <div class="title-row">
+            <div class="icon">
+                <i class="fa-solid fa-person-hiking"></i>
+            </div>
+            <h2>Nordijsko hodanje</h2>
+        </div>
+
+        <p>
+            Grupne šetnje koje kombiniraju tjelovježbu,
+            opuštanje i zajedništvo u prirodi.
+        </p>
+    </div>
+
+</div>
+
+<!-- O UDRUZI -->
+<div class="card red">
+
+    <h2>Udruga žena operiranih dojki NADA Rijeka</h2>
+
+    <p>
+        Mjesto nade, podrške i zajedništva za žene oboljele i liječene od raka dojke.
+        Već gotovo 30 godina pružamo psihološku pomoć, edukaciju i podršku ženama
+        i njihovim obiteljima diljem Primorsko-goranske županije.
+    </p>
+
+    <div class="info-box">
+        <p>
+            <strong>2026. obilježavamo 30 godina djelovanja</strong><br>
+            Moto obljetnice: „Slavimo život”
+        </p>
+    </div>
+
+    <div class="grid">
+
+        <!-- FLIP CARD 1 -->
+        <div class="card-container" onclick="this.classList.toggle('flipped')">
+
+            <div class="card-inner">
+
+                <div class="card-front purple">
+                    <div class="icon-large">🤝</div>
+                    <strong>Podrška novooboljelima</strong>
+                    <p>Klikni za više</p>
+                </div>
+
+                <div class="card-back">
+                    <p>
+                        Novooboljele žene mogu dobiti besplatno psihološko savjetovanje,
+                        podršku i razgovor sa ženama koje su prošle slično iskustvo.
+                    </p>
+                </div>
+
             </div>
 
         </div>
 
-        <button id="contact-btn" class="menu-trigger" style="position:relative; top:auto; right:auto; margin-top:20px;">
-           Kontaktirajte nas danas
-        </button>
+        <!-- FLIP CARD 2 -->
+        <div class="card-container" onclick="this.classList.toggle('flipped')">
 
-    </div>
+            <div class="card-inner">
 
-    <!-- EMERGENCY -->
-    <div class="card">
+                <div class="card-front green">
+                    <div class="icon-large">🎗️</div>
+                    <strong>Prevencija</strong>
+                    <p>Klikni za više</p>
+                </div>
 
-        <h2>Kontakt za hitne intervencije</h2>
+                <div class="card-back">
+                    <p>
+                        Organiziramo edukacije, Dan narcisa i Dan ružičaste vrpce
+                        kako bismo potaknuli rano otkrivanje raka dojke.
+                    </p>
+                </div>
 
-        <p>            
-            Ako osjećate jake simptome ili imate hitne brige, odmah kontaktirajte svoj zdravstveni tim.
-        </p>
-
-        <div class="grid">
-
-            <div class="card red">
-                <h3>Hitna pomoć</h3>
-                <h1>112</h1>
             </div>
 
-            <div class="card blue">
-                <h3>Udruga Nada</h3>
-                <h1>+385 51 371 062</h1>
+        </div>
+
+        <!-- FLIP CARD 3 -->
+        <div class="card-container" onclick="this.classList.toggle('flipped')">
+
+            <div class="card-inner">
+
+                <div class="card-front blue">
+                    <div class="icon-large">🏥</div>
+                    <strong>Humanitarni rad</strong>
+                    <p>Klikni za više</p>
+                </div>
+
+                <div class="card-back">
+                    <p>
+                        Zahvaljujući donacijama osigurane su fotelje za kemoterapiju,
+                        bolesnički kreveti i druga oprema za KBC Rijeka.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- FLIP CARD 4 -->
+        <div class="card-container" onclick="this.classList.toggle('flipped')">
+
+            <div class="card-inner">
+
+                <div class="card-front orange">
+                    <div class="icon-large">💬</div>
+                    <strong>Psihološka pomoć</strong>
+                    <p>Klikni za više</p>
+                </div>
+
+                <div class="card-back">
+                    <p>
+                        Strah, tuga i zbunjenost nakon dijagnoze su normalni.
+                        Niste sami i razgovor može pomoći.
+                    </p>
+                </div>
+
             </div>
 
         </div>
 
     </div>
+
+</div>
+
+    <!-- KONTAKT -->
+<div class="card blue">
+
+    <h2>Kontaktirajte nas</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3><i class="fa-solid fa-location-dot"></i> Adresa</h3>
+
+            <p>
+                Milana Smokvine Tvrdog 5/1<br>
+                51000 Rijeka
+            </p>
+        </div>
+
+        <div class="card">
+            <h3><i class="fa-solid fa-phone"></i> Telefon</h3>
+
+            <p>
+                051/371-062<br>
+                097/613-9715
+            </p>
+        </div>
+
+        <div class="card">
+            <h3><i class="fa-solid fa-envelope"></i> Email</h3>
+
+            <p>
+                klub.nada.rijeka@gmail.com
+            </p>
+        </div>
+
+        <div class="card">
+            <h3><i class="fa-solid fa-globe"></i> Web</h3>
+
+            <p>
+                klub-nada-rijeka.hr
+            </p>
+        </div>
+
+    </div>
+
+</div>
 
 </div>
 

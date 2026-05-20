@@ -116,11 +116,4 @@ cards.forEach(card => {
 
 
 
-//za resources.html
-  // Contact button
-  const contactBtn = document.getElementById('contact-btn');
-
-contactBtn.addEventListener('click', () => {
-    window.location.href = "mailto:info@udruga-nada.hr";
-});
 
