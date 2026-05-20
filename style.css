@@ -429,3 +429,26 @@
 .overlay.visible {
     display: block;
 }
+
+
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* osigurava da ništa ne izlazi iz kartica */
+.card,
+.card-container,
+.card-front,
+.card-back {
+    overflow: hidden;
+}
+
+/* ako neka slika treba biti “lijepo cropana” */
+.card img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
