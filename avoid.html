@@ -29,7 +29,7 @@
     <div class="nav-links">
         <h3>Izbornik</h3>
         <a href="index.html"><i class="fa-solid fa-house"></i> Početna</a>
-        <a href="avoid.html"><i class="fa-solid fa-apple-whole"></i>Što izbjegavati?</a>
+        <a href="avoid.html" class="active"><i class="fa-solid fa-apple-whole"></i>Što izbjegavati?</a>
         <a href="food.html"><i class="fa-solid fa-utensils"></i> Što jesti?</a>
         <a href="nausea.html"><i class="fa-solid fa-droplet"></i> Mučnina i apetit</a>
         <a href="resources.html"><i class="fa-solid fa-heart"></i> Pomoć i resursi</a>
@@ -55,143 +55,333 @@
         
     </div>
 
-    <!-- KATEGORIJE -->
-    <div class="grid" >
+   <!-- KATEGORIJE -->
+<div class="grid">
 
-        <!-- HEAVY -->
-        <div class="card orange" >
-            <div class="title-row" >
-                <i class="fa-solid fa-burger icon"></i>
-                <h2>Teška i masna hrana</h2>
-            </div>
-            <p>Teže se probavlja i može pogoršati mučninu.</p>
-
-            <div class="card hover-item">
-                Pržena hrana
-                <div class="hidden">Visok udio masti usporava probavu</div>
-            </div>
-
-            <div class="card hover-item">
-                Kremasti umaci
-                <div class="hidden">Mogu izazvati mučninu</div>
-            </div>
-
-            <div class="card hover-item">
-                Masno meso
-                <div class="hidden">Teško za probavu</div>
-            </div>
+    <!-- PROCESSED -->
+    <div class="card orange">
+        <div class="title-row">
+            <i class="fa-solid fa-box-open icon"></i>
+            <h2>Procesirana hrana</h2>
         </div>
 
-        <!-- SPICY -->
-        <div class="card red">
-            <div class="title-row" >
-                <i class="fa-solid fa-pepper-hot icon"></i>
-                <h2>Vrlo začinjena hrana</h2>
-            </div>
-            <p>Može iritirati želudac i usnu šupljinu.</p>
+        <p>Visoko procesirana hrana može povećati upalu i otežati oporavak.</p>
 
-            <div class="card hover-item">
-                Ljute papričice
-                <div class="hidden">Iritiraju sluznicu</div>
-            </div>
-
-            <div class="card hover-item">
-                Ljuti umaci
-                <div class="hidden">Mogu izazvati nelagodu</div>
-            </div>
-
-            <div class="card hover-item">
-                Začinjena jela
-                <div class="hidden">Preintenzivna za okus</div>
-            </div>
+        <div class="card hover-item">
+            Brza hrana
+            <div class="hidden">Sadrži puno soli, masti i aditiva</div>
         </div>
 
-        <!-- RISKY -->
-        <div class="card red">
-            <div class="title-row" >
-                <i class="fa-solid fa-exclamation-triangle icon"></i>   
-                <h2>Rizična hrana</h2>
-            </div>
-            <p>Imunitet je slabiji → veći rizik infekcija.</p>
-
-            <div class="card hover-item">
-                Sirovo meso
-                <div class="hidden">Rizik bakterija</div>
-            </div>
-
-            <div class="card hover-item">
-                Sirova jaja
-                <div class="hidden">Salmonela</div>
-            </div>
-
-            <div class="card hover-item">
-                Nepasterizirano mlijeko
-                <div class="hidden">Može sadržavati bakterije</div>
-            </div>
+        <div class="card hover-item">
+            Pržena hrana
+            <div class="hidden">Hidrogenizirana ulja mogu povećati upalu</div>
         </div>
 
-         <!-- jos jedna -->
-        <div class="card orange">
-            <div class="title-row" >
-                <i class="fa-solid fa-utensils icon"></i>
-                <h2>jos jedna</h2>
-            </div>
-            <p>Imunitet je slabiji → veći rizik infekcija.</p>
-
-            <div class="card hover-item">
-                Sirovo meso
-                <div class="hidden">Rizik bakterija</div>
-            </div>
-
-            <div class="card hover-item">
-                Sirova jaja
-                <div class="hidden">Salmonela</div>
-            </div>
-
-            <div class="card hover-item">
-                Nepasterizirano mlijeko
-                <div class="hidden">Može sadržavati bakterije</div>
-            </div>
+        <div class="card hover-item">
+            Industrijski slatkiši
+            <div class="hidden">Puno šećera i malo nutritivne vrijednosti</div>
         </div>
-
     </div>
+
+    <!-- RISKY -->
+    <div class="card red">
+        <div class="title-row">
+            <i class="fa-solid fa-triangle-exclamation icon"></i>
+            <h2>Rizična hrana</h2>
+        </div>
+
+        <p>Imunitet može biti oslabljen tijekom kemoterapije.</p>
+
+        <div class="card hover-item">
+            Sushi i sirova riba
+            <div class="hidden">Rizik bakterija i parazita</div>
+        </div>
+
+        <div class="card hover-item">
+            Sirova ili mekano kuhana jaja
+            <div class="hidden">Mogućnost salmonele</div>
+        </div>
+
+        <div class="card hover-item">
+            Nepasterizirani mliječni proizvodi
+            <div class="hidden">Mogu sadržavati štetne bakterije</div>
+        </div>
+
+        <div class="card hover-item">
+            Neoprano voće i povrće
+            <div class="hidden">Povećan rizik infekcija</div>
+        </div>
+    </div>
+
+    <!-- DIARRHEA -->
+    <div class="card yellow">
+        <div class="title-row">
+            <i class="fa-solid fa-toilet-paper icon"></i>
+            <h2>Kod proljeva izbjegavati</h2>
+        </div>
+
+        <p>Neka hrana može pogoršati proljev i nadutost.</p>
+
+        <div class="card hover-item">
+            Masna i pržena hrana
+            <div class="hidden">Teže se probavlja</div>
+        </div>
+
+        <div class="card hover-item">
+            Gazirana i jako slatka pića
+            <div class="hidden">Mogu pojačati proljev</div>
+        </div>
+
+        <div class="card hover-item">
+            Grah i sirovo povrće
+            <div class="hidden">Povećavaju stvaranje plinova</div>
+        </div>
+
+        <div class="card hover-item">
+            Alkohol
+            <div class="hidden">Može dodatno nadražiti crijeva</div>
+        </div>
+
+        <div class="card hover-item">
+            Kava i kofein
+            <div class="hidden">Mogu ubrzati rad crijeva</div>
+        </div>
+    </div>
+
+    <!-- DRY MOUTH -->
+    <div class="card blue">
+        <div class="title-row">
+            <i class="fa-solid fa-droplet icon"></i>
+            <h2>Suha usta</h2>
+        </div>
+
+        <p>Neke namirnice mogu dodatno isušiti i iritirati usnu šupljinu.</p>
+
+        <div class="card hover-item">
+            Alkohol
+            <div class="hidden">Dodatno isušuje usta</div>
+        </div>
+
+        <div class="card hover-item">
+            Jako slana hrana
+            <div class="hidden">Može peći i iritirati</div>
+        </div>
+
+        <div class="card hover-item">
+            Tvrda i hrskava hrana
+            <div class="hidden">Može ozlijediti osjetljiva usta</div>
+        </div>
+
+        <div class="card hover-item">
+            Vodice za ispiranje s alkoholom
+            <div class="hidden">Povećavaju suhoću</div>
+        </div>
+
+        <div class="card hover-item">
+            Pušenje i dim
+            <div class="hidden">Dodatno nadražuju sluznicu</div>
+        </div>
+    </div>
+
+    <!-- NAUSEA -->
+    <div class="card purple">
+        <div class="title-row">
+            <i class="fa-solid fa-face-dizzy icon"></i>
+            <h2>Mučnina</h2>
+        </div>
+
+        <p>Jake arome i mirisi mogu pojačati osjećaj mučnine.</p>
+
+        <div class="card hover-item">
+            Miris kave
+            <div class="hidden">Jak miris može izazvati nelagodu</div>
+        </div>
+
+        <div class="card hover-item">
+            Riba i luk
+            <div class="hidden">Intenzivan miris tijekom kuhanja</div>
+        </div>
+
+        <div class="card hover-item">
+            Češnjak
+            <div class="hidden">Može izazvati osjetljivost želuca</div>
+        </div>
+
+        <div class="card hover-item">
+            Kuhanje u zatvorenom prostoru
+            <div class="hidden">Mirisi hrane mogu pogoršati mučninu</div>
+        </div>
+    </div>
+
+    <!-- THROAT -->
+    <div class="card red">
+        <div class="title-row">
+            <i class="fa-solid fa-fire icon"></i>
+            <h2>Nadraženo grlo i usta</h2>
+        </div>
+
+        <p>Određena hrana može peći ili ozlijediti grlo.</p>
+
+        <div class="card hover-item">
+            Vruća hrana i pića
+            <div class="hidden">Mogu izazvati pečenje</div>
+        </div>
+
+        <div class="card hover-item">
+            Citrusni sokovi
+            <div class="hidden">Visoka kiselost nadražuje grlo</div>
+        </div>
+
+        <div class="card hover-item">
+            Čips i tvrda hrana
+            <div class="hidden">Mogu ogrebati osjetljivu sluznicu</div>
+        </div>
+
+        <div class="card hover-item">
+            Ljuta hrana
+            <div class="hidden">Povećava iritaciju</div>
+        </div>
+
+        <div class="card hover-item">
+            Alkoholna pića
+            <div class="hidden">Pogoršavaju pečenje i suhoću</div>
+        </div>
+    </div>
+
+</div>
 
     <!-- KVIZ -->
-    <div class="card purple">
-        <h1>Prepoznaj siguran obrok</h1>
-        <p>Označi koji obrok je siguran izbor.</p>
-
-        <button class="quiz-btn" onclick="checkAnswer('a')">
-            A. Pržena piletina s umakom
-        </button>
-
-        <button class="quiz-btn" onclick="checkAnswer('b')">
-            B. Ljuti curry
-        </button>
-
-        <button class="quiz-btn" onclick="checkAnswer('c')">
-            C. Piletina s povrćem na pari
-        </button>
-
-        <p id="quiz-result"></p>
+<div class="card purple">
+    <div class="title-row">
+        <i class="fa-solid fa-circle-question icon"></i>
+        <h1>Prepoznaj sigurniji izbor</h1>
     </div>
 
-    <!-- ALTERNATIVE -->
-    <div class="card">
+    <p>Odaberi najbolju opciju tijekom kemoterapije.</p>
+
+    <!-- PITANJE 1 -->
+    <div class="quiz-box">
+        <h3>1. Koji je sigurniji obrok?</h3>
+
+        <button class="quiz-btn" onclick="checkAnswer(this, true)">
+            Kuhana piletina i povrće na pari
+        </button>
+
+        <button class="quiz-btn" onclick="checkAnswer(this, false)">
+            Prženi hamburger i pomfrit
+        </button>
+
+        <button class="quiz-btn" onclick="checkAnswer(this, false)">
+            Ljuti tacos umak
+        </button>
+    </div>
+
+    <!-- PITANJE 2 -->
+    <div class="quiz-box">
+        <h3>2. Što treba izbjegavati kod oslabljenog imuniteta?</h3>
+
+        <button class="quiz-btn" onclick="checkAnswer(this, false)">
+            Kuhanu rižu
+        </button>
+
+        <button class="quiz-btn" onclick="checkAnswer(this, true)">
+            Sushi i sirovu ribu
+        </button>
+
+        <button class="quiz-btn" onclick="checkAnswer(this, false)">
+            Kuhano povrće
+        </button>
+    </div>
+
+    <!-- PITANJE 3 -->
+    <div class="quiz-box">
+        <h3>3. Što može pogoršati mučninu?</h3>
+
+        <button class="quiz-btn" onclick="checkAnswer(this, true)">
+            Jak miris pržene hrane
+        </button>
+
+        <button class="quiz-btn" onclick="checkAnswer(this, false)">
+            Blaga juha
+        </button>
+
+        <button class="quiz-btn" onclick="checkAnswer(this, false)">
+            Banana
+        </button>
+    </div>
+
+    <p id="quiz-result"></p>
+</div>
+
+
+<!-- BOLJE ALTERNATIVE -->
+<div class="card green">
+
+    <div class="title-row">
+        <i class="fa-solid fa-leaf icon"></i>
         <h1>Bolje alternative</h1>
-        <div class="title-row">
-            <p style="color: red;"><s>Pržena hrana</s></p> <p class="hover-item"> → Pečeno ili grill</p>
-        </div>
-        <div class="title-row">
-            <p style="color: red;"><s>Začinjena hrana</s></p> <p class="hover-item"> → Blagi začini</p>
-        </div>
-        <div class="title-row">
-            <p style="color: red;"><s>Sirovo meso</s></p> <p class="hover-item"> → Dobro kuhano</p>
-        </div>
-        <div class="title-row">
-            <p style="color: red;"><s>Kremasti umaci</s></p> <p class="hover-item"> → Lagane juhe ili maslinovo ulje</p>
-        </div>
     </div>
+
+    <p>Zamijeni tešku i iritantnu hranu lakšim opcijama.</p>
+
+    <div class="alternatives-grid">
+
+        <div class="card hover-item">
+            <p style="color:red;"><s>Pržena hrana</s></p>
+            <h3>→ Pečeno ili kuhano</h3>
+
+            <div class="hidden">
+                Lakše za probavu i manje masno
+            </div>
+        </div>
+
+        <div class="card hover-item">
+            <p style="color:red;"><s>Gazirana pića</s></p>
+            <h3>→ Voda ili blagi čaj</h3>
+
+            <div class="hidden">
+                Manje iritira želudac
+            </div>
+        </div>
+
+        <div class="card hover-item">
+            <p style="color:red;"><s>Ljuta hrana</s></p>
+            <h3>→ Blagi začini</h3>
+
+            <div class="hidden">
+                Smanjuje pečenje i iritaciju
+            </div>
+        </div>
+
+        <div class="card hover-item">
+            <p style="color:red;"><s>Sirova jaja</s></p>
+            <h3>→ Dobro kuhana jaja</h3>
+
+            <div class="hidden">
+                Sigurnije za oslabljen imunitet
+            </div>
+        </div>
+
+        <div class="card hover-item">
+            <p style="color:red;"><s>Čips i tvrda hrana</s></p>
+            <h3>→ Mekana hrana i juhe</h3>
+
+            <div class="hidden">
+                Nježnije za grlo i usnu šupljinu
+            </div>
+        </div>
+
+        <div class="card hover-item">
+            <p style="color:red;"><s>Kava i kofein</s></p>
+            <h3>→ Biljni čaj</h3>
+
+            <div class="hidden">
+                Može pomoći kod mučnine i suhoće
+            </div>
+        </div>
+
+    </div>
+</div>
     </div>
 
     <script type="module">
@@ -208,18 +398,22 @@ document.querySelectorAll(".card").forEach((cardItem) => {
 });
 
 
-
-
 // KVIZ
-window.checkAnswer = function(answer) { 
+window.checkAnswer = function(button, correct) {
+
     const result = document.getElementById("quiz-result");
 
-    if (answer === "c") {
-        result.innerHTML = "✓ Točno! Ovo je siguran izbor.";
-        result.style.color = "green";
-    } else {
-        result.innerHTML = "✗ Nije dobro - preteško ili prezačinjeno.";
+    if(correct){
+        result.innerHTML = "✓ Točan odgovor!";
+        result.style.color = "limegreen";
+
+        button.style.border = "2px solid limegreen";
+    }
+    else{
+        result.innerHTML = "✗ Pokušaj ponovno.";
         result.style.color = "red";
+
+        button.style.border = "2px solid red";
     }
 }
 
