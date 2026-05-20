@@ -11,6 +11,68 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        .card-container {
+    perspective: 1000px;
+    height: 250px;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.7s;
+    transform-style: preserve-3d;
+}
+
+.card-container.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    backface-visibility: hidden;
+    padding: 20px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.card-front {
+    color: #064e3b;
+}
+
+.card-back {
+    background: white;
+    transform: rotateY(180deg);
+    color: #374151;
+    text-align: left;
+}
+
+.card-back ul {
+    padding-left: 20px;
+}
+
+.card-back li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.card-container:hover .card-front {
+    transform: scale(1.02);
+}
+    </style>
 </head>
 <body>
     
@@ -48,34 +110,129 @@
         </div>
     </div>
 
-    <div class="grid" id="symptoms-grid">
-        <div class="food-item card symptom-card" data-symptom="metallic">
-            <div class="icon-large">🍋</div>
-            <h2>Metalni okus</h2>
-            <p>Hrana ima okus metala, posebno meso i voda.</p>
-        </div>
+<div class="grid">
 
-        <div class="food-item card symptom-card" data-symptom="loss">
-            <div class="icon-large">🌿</div>
-            <h2>Gubitak okusa</h2>
-            <p>Sve ima bljutav okus ili uopće ne osjećate aromu.</p>
-        </div>
+    <div class="card-container" onclick="this.classList.toggle('flipped')">
+        <div class="card-inner">
 
-        <div class="food-item card symptom-card" data-symptom="heightened">
-            <div class="icon-large">🥄</div>
-            <h2>Preosjetljivost</h2>
-            <p>Okusi se čine prejakima ili intenzivnima.</p>
-        </div>
-    </div>
-
-    <div id="solution-section" class="card amber-section hidden">
-        <div class="title-row">
-            <i class="fa-solid fa-lightbulb text-amber"></i>
-            <h2 id="solution-title">Rješenja</h2>
-        </div>
-        <div id="solution-list" class="solution-grid">
+            <div class="card-front purple">
+                <div class="icon-large">🍗</div>
+                <strong>Odabir hrane</strong>
+                <p>Što jesti kada hrana ima čudan okus.</p>
             </div>
+
+            <div class="card-back">
+                <ul>
+                    <li>Birajte hranu koja vam izgleda i miriše privlačno.</li>
+                    <li>Ako vam meso ima čudan okus, pokušajte s piletinom ili puretinom.</li>
+                    <li>Marinirajte hranu u voćnim sokovima ili dressing umacima.</li>
+                </ul>
+            </div>
+
+        </div>
     </div>
+
+    <div class="card-container" onclick="this.classList.toggle('flipped')">
+        <div class="card-inner">
+
+            <div class="card-front yellow">
+                <div class="icon-large">🍋</div>
+                <strong>Kiseli okusi</strong>
+                <p>Kako poboljšati okus hrane.</p>
+            </div>
+
+            <div class="card-back">
+                <ul>
+                    <li>Probajte limun, naranču ili ocat.</li>
+                    <li>Kisela hrana može pojačati okus.</li>
+                    <li>Ako imate ranice u ustima, izbjegavajte kiselu hranu.</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="card-container" onclick="this.classList.toggle('flipped')">
+        <div class="card-inner">
+
+            <div class="card-front green">
+                <div class="icon-large">🌿</div>
+                <strong>Poboljšanje okusa</strong>
+                <p>Dodavanje aroma i začina.</p>
+            </div>
+
+            <div class="card-back">
+                <ul>
+                    <li>Dodajte bosiljak, origano ili ružmarin.</li>
+                    <li>Koristite barbecue umake ili luk.</li>
+                    <li>Ako je hrana gorka, dodajte malo šećera.</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="card-container" onclick="this.classList.toggle('flipped')">
+        <div class="card-inner">
+
+            <div class="card-front blue">
+                <div class="icon-large">🥤</div>
+                <strong>Neugodni mirisi</strong>
+                <p>Kako smanjiti mirise hrane.</p>
+            </div>
+
+            <div class="card-back">
+                <ul>
+                    <li>Poslužujte hranu na sobnoj temperaturi.</li>
+                    <li>Pijte kroz slamku.</li>
+                    <li>Kuhajte uz otvoren prozor ili napu.</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="card-container" onclick="this.classList.toggle('flipped')">
+        <div class="card-inner">
+
+            <div class="card-front red">
+                <div class="icon-large">🥄</div>
+                <strong>Metalni okus</strong>
+                <p>Što može pomoći.</p>
+            </div>
+
+            <div class="card-back">
+                <ul>
+                    <li>Koristite plastični pribor za jelo.</li>
+                    <li>Kuhajte u staklenim posudama.</li>
+                    <li>Održavajte usta čistima.</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="card-container" onclick="this.classList.toggle('flipped')" style="padding-bottom: 1rem;">
+        <div class="card-inner">
+
+            <div class="card-front purple">
+                <div class="icon-large">👩‍⚕️</div>
+                <strong>Potražite pomoć</strong>
+                <p>Kada razgovarati sa stručnjakom.</p>
+            </div>
+
+            <div class="card-back">
+                <ul>
+                    <li>Razgovarajte s nutricionistom.</li>
+                    <li>Posjetite stomatologa ako simptomi traju.</li>
+                    <li>Obavijestite liječnika ako ne možete jesti.</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+</div>
 
     <div class="card blue-section">
         <h2>Pronađi svoje rješenje</h2>
