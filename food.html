@@ -340,19 +340,19 @@
 
 <script>
     //za food.html
-const items = document.querySelectorAll(".hover-item");
-
+const items = document.querySelectorAll(".hover-item"); // Odabiremo sve elemente s klasom "hover-item"
+// Dodajemo event listener za svaki od tih elemenata
 items.forEach(item => {
     item.addEventListener("click", () => {
 
         const hidden = item.querySelector("div");
         
 
-        hidden.classList.toggle("hidden");
+        hidden.classList.toggle("hidden"); // Prebacujemo klasu "hidden" na div unutar kliknutog elementa
         item.style.border = "2px solid green";
         item.style.backgroundColor = "#d5f5dd";
 
-        if(hidden.classList.contains("hidden")) {
+        if(hidden.classList.contains("hidden")) { // Ako je div sada skriven, vraćamo stilove na početne vrijednosti
             item.style.border = "none";
             item.style.backgroundColor = "rgba(255,255,255,0.7)";
         } else {

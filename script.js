@@ -5,13 +5,13 @@ const menuOpenBtn = document.getElementById('menu-open');
 const menuCloseBtn = document.getElementById('menu-close');
 const menuOverlay = document.getElementById('menu-overlay');
 
-// Funkcija za otvaranje
+// otvori meni
 menuOpenBtn.addEventListener('click', () => {
     sideMenu.classList.add('open');
     menuOverlay.classList.add('visible');
 });
 
-// Funkcija za zatvaranje
+// zatvori meni
 const closeMenu = () => {
     sideMenu.classList.remove('open');
     menuOverlay.classList.remove('visible');

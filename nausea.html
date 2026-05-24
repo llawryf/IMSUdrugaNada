@@ -176,15 +176,15 @@
     // EXPAND TIP
     function toggleTip(index) {
         const tips = document.querySelectorAll(".tip");
-
+// Prolazimo kroz sve savjete i prikazujemo ili skrivamo dodatne informacije
         tips.forEach((tip, i) => {
-            const hidden = tip.querySelector(".hidden");
+            const hidden = tip.querySelector(".hidden"); // Pronalazimo div s klasom "hidden" unutar trenutnog savjeta
 
-            if (i === index) {
+            if (i === index) { 
                 hidden.style.display =
-                    hidden.style.display === "block" ? "none" : "block";
+                    hidden.style.display === "block" ? "none" : "block"; // Prebacujemo između prikaza i skrivanja
             } else {
-                hidden.style.display = "none";
+                hidden.style.display = "none"; // Skrivamo sve ostale divove s klasom "hidden"
             }
         });
     }
