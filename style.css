@@ -28,8 +28,9 @@
         .image {
             width: 100%;
             border-radius: 16px;
-            margin: 20px 0;
+            margin: auto;
             height: auto;
+            text-align: center;
         }
 
         .card {
