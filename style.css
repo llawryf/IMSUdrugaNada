@@ -184,7 +184,7 @@
     display: flex;
     align-items: center;
     gap: 15px;
-    justify-content: center; /* ako želiš centrirano */
+    justify-content: center; 
     margin-bottom: 10px;
 }
 
@@ -197,7 +197,7 @@
 
 /* 2. Kreiranje tooltipa */
 .food-item.hover-item.card::after {
-    content: "klikni me"; /* Tekst koji želiš */
+    content: "klikni me"; /* Tekst tooltipa */
     position: absolute;
     bottom: 90%;      /* Pozicija iznad kartice */
     left: 50%;
@@ -325,7 +325,7 @@
     top: 20px;
     right: 20px;
     z-index: 999;
-    background: #4c1d95; /* Ljubičasta boja kao u tvom dizajnu */
+    background: #4c1d95; /* Ljubičasta boja kao u  dizajnu */
     color: white;
     border: none;
     padding: 12px 15px;
